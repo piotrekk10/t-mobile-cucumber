@@ -21,10 +21,13 @@ public class GetExchangeRatesStepDefinitions {
         .when()
         .get("/api/exchangerates/tables/a")
         .then()
+        .log()
+        .status()
         .statusCode(200)
         .extract()
         .response()
         .as(ExchangeRatesResponse.class);
+
   }
 
   @When("wyświetlam kurs dla waluty o kodzie {string}")
