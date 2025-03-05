@@ -12,7 +12,6 @@ public class SelenideHooks {
   @Before("@web")
   public void beforeTest() {
     report.start();
-
   }
 
   @After("@web")

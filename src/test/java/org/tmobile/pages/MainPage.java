@@ -34,6 +34,7 @@ public class MainPage {
 
   public void openBrowser(String browserName) {
     Configuration.browser = browserName;
+    Configuration.browserSize = "1920x1080";
     open("https://t-mobile.pl");
     Cookie cookie = new Cookie.Builder("didomi_token",
         "eyJ1c2VyX2lkIjoiMTk1NjFlOWYtMzZkNy02Y2E3LTk5MGItMTEwZWNmYmI0OGRlIiwiY3JlYXRlZCI6IjIwMjUtMDMtMDRUMTY6MDc6NTcuMDM3WiIsInVwZGF0ZWQiOiIyMDI1LTAzLTA0VDE2OjA4OjA2Ljg0NFoiLCJ2ZW5kb3JzIjp7ImRpc2FibGVkIjpbImM6dG1vYmlsZS1wcm9kIl19LCJwdXJwb3NlcyI6eyJkaXNhYmxlZCI6WyJhbmFsaXR5Y3puZS10bW9iaWxlLXByb2QiLCJwZXJzb25hbGl6YWN5am5lLXRtb2JpbGUtcHJvZCIsInJla2xhbW93ZS10bW9iaWxlLXByb2QiXX0sInZlcnNpb24iOjJ9")

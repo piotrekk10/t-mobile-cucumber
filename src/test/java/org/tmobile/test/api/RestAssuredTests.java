@@ -5,7 +5,9 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/org.tmobile.cucumber/api/", glue = {"org.tmobile.config.api",
+@CucumberOptions(plugin = {
+    "json:target/cucumber-reports/CucumberApi.json"}, features = "src/test/resources/org.tmobile.cucumber/api/", glue = {
+    "org.tmobile.config.api",
     "org.tmobile.steps.api"})
 public class RestAssuredTests {
 

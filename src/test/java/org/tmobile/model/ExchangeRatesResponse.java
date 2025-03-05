@@ -11,6 +11,6 @@ import lombok.Data;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ExchangeRatesResponse {
 
-    @XmlElement(name = "ExchangeRatesTable")
-    private ExchangeRatesTable exchangeRatesTable;
+  @XmlElement(name = "ExchangeRatesTable")
+  private ExchangeRatesTable exchangeRatesTable;
 }
