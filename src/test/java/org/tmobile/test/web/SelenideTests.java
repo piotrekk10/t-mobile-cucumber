@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/", glue = "org.tmobile.steps")
-public class SelenideTestRunner {
+public class SelenideTests {
 
 }

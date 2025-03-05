@@ -9,10 +9,10 @@ import com.codeborne.selenide.SelenideElement;
 
 public class SmartphonesNoSubPage {
 
-  private SelenideElement devicesHeader = $$("h1")
+  private final SelenideElement devicesHeader = $$("h1")
       .filterBy(Condition.text("Urządzenia bez abonamentu"))
       .first();
-  private SelenideElement firstItem = $("div[data-qa*='LST_ProductCard0']");
+  private final SelenideElement firstItem = $("div[data-qa*='LST_ProductCard0']");
 
   public void smartphonesWithoutSubscriptionPageIsVisible() {
     devicesHeader.shouldBe(visible);

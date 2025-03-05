@@ -7,15 +7,16 @@ import static com.codeborne.selenide.Selenide.$$;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import java.util.Objects;
 
 public class BasketPage {
 
-  private SelenideElement basketHeader = $$("h1")
+  private final SelenideElement basketHeader = $$("h1")
       .filterBy(Condition.text("Twój koszyk"))
       .first();
-  private SelenideElement productPriceUpFront = $(
+  private final SelenideElement productPriceUpFront = $(
       "div[data-qa='BKT_TotalupFrontCurrCOde']");
-  private SelenideElement monthlyPrice = $(
+  private final SelenideElement monthlyPrice = $(
       "div[data-qa='BKT_TotalMonthlyCurrCOde']");
 
 
@@ -28,10 +29,6 @@ public class BasketPage {
   }
 
   public void compareMonthlyPrice(String price) {
-    if (price == null) {
-      monthlyPrice.shouldHave(text("0 zł"));
-    } else {
-      monthlyPrice.shouldHave(text(price));
-    }
+    monthlyPrice.shouldHave(text(Objects.requireNonNullElse(price, "0 zł")));
   }
 }

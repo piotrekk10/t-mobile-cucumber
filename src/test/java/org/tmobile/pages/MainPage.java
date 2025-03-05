@@ -14,23 +14,23 @@ import org.openqa.selenium.Cookie;
 
 public class MainPage {
 
-  private SelenideElement mainContent = $("div.container>div.large-slider");
-  private SelenideElement devicesTab = $$("li.menu-dropdown")
+  private final SelenideElement mainContent = $("div.container>div.large-slider");
+  private final SelenideElement devicesTab = $$("li.menu-dropdown")
       .filterBy(text("Urządzenia"))
       .first()
       .$("button.menu-dropdown-item");
-  private SelenideElement expandedDevicesTab = $$("li.menu-dropdown")
+  private final SelenideElement expandedDevicesTab = $$("li.menu-dropdown")
       .filterBy(text("Urządzenia"))
       .first()
       .$("div.menu-dropdown-submenu");
-  private SelenideElement smartphonesWithoutSubscription =
+  private final SelenideElement smartphonesWithoutSubscription =
       $$("li")
           .filterBy(Condition.text("Bez abonamentu"))
           .last()
           .$$("ul li span")
           .filterBy(Condition.text("Smartfony"))
           .last();
-  private SelenideElement basket = $("a[title='Koszyk']>div");
+  private final SelenideElement basket = $("a[title='Koszyk']>div");
 
   public void openBrowser(String browserName) {
     Configuration.browser = browserName;

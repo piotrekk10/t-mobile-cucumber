@@ -9,18 +9,18 @@ import com.codeborne.selenide.SelenideElement;
 
 public class ProductPage {
 
-  private SelenideElement productName = $("h1[data-qa='PRD_ProductName']");
-  private SelenideElement productPriceUpFront = $(
+  private final SelenideElement productName = $("h1[data-qa='PRD_ProductName']");
+  private final SelenideElement productPriceUpFront = $(
       "div[class*='vertical_view'] div[data-qa='PRD_TotalUpfront']");
-  private SelenideElement monthlyPrice = $(
+  private final SelenideElement monthlyPrice = $(
       "div[class*='vertical_view'] div[class*='priceRightSection'] div[class*='dt_price_change']");
-  private SelenideElement addToBasket = $(
+  private final SelenideElement addToBasket = $(
       "div[class*='vertical_view'] button[data-qa='PRD_AddToBasket']");
-  private SelenideElement buyAsGuest = $("button[data-qa='Presale_NewUserCta']");
-  private SelenideElement newNumberRadioButton = $$("label[class*='radioType_primary']")
+  private final SelenideElement buyAsGuest = $("button[data-qa='Presale_NewUserCta']");
+  private final SelenideElement newNumberRadioButton = $$("label[class*='radioType_primary']")
       .filterBy(Condition.text("Kupuję nowy numer"))
       .first();
-  private SelenideElement nextButton = $$("button")
+  private final SelenideElement nextButton = $$("button")
       .filterBy(Condition.text("Dalej"))
       .first();
 
