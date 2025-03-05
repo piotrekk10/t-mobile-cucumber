@@ -1,5 +1,6 @@
 package org.tmobile.config.web;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SimpleReport;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -17,6 +18,8 @@ public class SelenideHooks {
   @After("@web")
   public void afterTest(Scenario scenario) {
     report.finish(scenario.getName());
+    Selenide
+        .closeWebDriver();
   }
 }
 
