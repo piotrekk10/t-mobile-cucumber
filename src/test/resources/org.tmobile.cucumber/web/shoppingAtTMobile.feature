@@ -1,3 +1,4 @@
+@web
 Feature: Zakupy na stronie T-Mobile
 
   Scenario: Dodanie produktu do koszyka i sprawdzenie ceny

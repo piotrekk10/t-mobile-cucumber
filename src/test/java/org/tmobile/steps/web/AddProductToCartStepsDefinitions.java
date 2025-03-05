@@ -1,4 +1,4 @@
-package org.tmobile.steps;
+package org.tmobile.steps.web;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

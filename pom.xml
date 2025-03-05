@@ -11,11 +11,14 @@
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <cucumberVersion>7.20.1</cucumberVersion>
-    <selenideVersion>7.7.0</selenideVersion>
-    <junitVersion>4.13.2</junitVersion>
-    <surefireVersion>3.5.2</surefireVersion>
-    <slf4jVersion>2.0.17</slf4jVersion>
+    <cucumber.version>7.20.1</cucumber.version>
+    <jaxb.version>2.3.3</jaxb.version>
+    <junit.version>4.13.2</junit.version>
+    <lombok.version>1.18.36</lombok.version>
+    <restAssured.version>5.5.1</restAssured.version>
+    <selenide.version>7.7.0</selenide.version>
+    <surefire.version>3.5.2</surefire.version>
+    <slf4j.version>2.0.17</slf4j.version>
   </properties>
 
   <dependencies>
@@ -23,43 +26,60 @@
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>${cucumberVersion}</version>
+      <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
-      <version>${cucumberVersion}</version>
+      <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
     <!--selenide-->
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide-junit4</artifactId>
-      <version>${selenideVersion}</version>
+      <version>${selenide.version}</version>
       <scope>test</scope>
     </dependency>
-    <!--junit-->
+    <!-- rest-assured -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${restAssured.version}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junitVersion}</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>${slf4jVersion}</version>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <scope>provided</scope>
+      <version>${lombok.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <version>${jaxb.version}</version>
     </dependency>
   </dependencies>
   <build>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>${surefireVersion}</version>
-        </plugin>
-      </plugins>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>${surefire.version}</version>
+      </plugin>
+    </plugins>
   </build>
 </project>
 

@@ -1,4 +1,4 @@
-package org.tmobile.steps;
+package org.tmobile.config.web;
 
 import com.codeborne.selenide.logevents.SimpleReport;
 import io.cucumber.java.After;
@@ -9,16 +9,14 @@ public class SelenideHooks {
 
   private final SimpleReport report = new SimpleReport();
 
-  @Before
-  public void beforeTest(Scenario scenario) {
-    scenario.log("Starting " + scenario.getName());
+  @Before("@web")
+  public void beforeTest() {
     report.start();
 
   }
 
-  @After
+  @After("@web")
   public void afterTest(Scenario scenario) {
-    scenario.log("Finished " + scenario.getName());
     report.finish(scenario.getName());
   }
 }
